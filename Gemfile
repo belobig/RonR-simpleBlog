@@ -9,7 +9,18 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+
+# Using postgresql instead of sqlite for use on Heroku
+# gem 'pg'
+
+# Please note that Bundler version 1.0 is necessary to let bundler do its dependency management,
+# as there is no .gemspec in the source.
+gem 'pg', '0.17.1', :platform => :jruby, :git => 'git://github.com/headius/jruby-pg.git', :branch => :master
+
+# comment the activerecord-jdbcsqlite3-adapter line
+# gem 'activerecord-jdbcsqlite3-adapter'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
